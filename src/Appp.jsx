@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+
 
 
 const Appp =() =>{
+    const[num, setNum] = useState(0);
+    const [text, setText] = useState("time clicked");
+    useEffect(()=>{
+        document.title = num; 
+    });
 
-    const [name, setName] = useState();
-    const [fullname, setFullname] = useState();
+    useEffect(()=>{
+        document.title = {num}, text; 
+    });
 
-    const inputEvent = (event) => {
-        setName(event.target.value);
 
-    };
 
-    const formSubmit = () => {
-        setFullname(name);
 
-    };
-    
+
     return (
-    <>
-        <div>
-            <h1>hello {fullname}</h1>
-            <input type= "text" placeholder="enter your name" onChange = {inputEvent} />
-            <button onClick={formSubmit}>click me 👍</button>
-        </div>
-    </>
+        <button onClick={()=> {setNum(num + 1);}}>click me {num}</button>
     );
+
 };
 
 export default Appp;
